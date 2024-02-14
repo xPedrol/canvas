@@ -61,9 +61,10 @@ function Circle(x, y, radius, paceX, paceY) {
         this.draw()
     }
     this.grow = function () {
+        const maxRadius = 80
         if (mouse.x === 0 && mouse.y === 0) return
-        if (mouse.x < this.x + 50 && mouse.x > this.x - 50 &&
-            mouse.y < this.y + 50 && mouse.y > this.y - 50) {
+        if (mouse.x < this.x + maxRadius && mouse.x > this.x - maxRadius &&
+            mouse.y < this.y + maxRadius && mouse.y > this.y - maxRadius) {
             if (this.radius < 35) this.radius += 6
         } else if (this.radius > this.prevRadius) {
             this.radius -= 1
